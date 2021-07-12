@@ -1,0 +1,151 @@
+{% load static %}
+{% load i18n %}
+{% load my_tags %}
+{#{% load utils %}#}
+
+<header class="main-header header-style-one">
+    <!--Header Top-->
+
+    <div class="header-top">
+
+        <div class="auto-container clearfix">
+            <div class="top-left clearfix">
+                <div class="text"><span class="icon flaticon-call-answer"></span> Need help? Call Us Now : <a
+                        href="tel:{{ number.call }}" class="number">{{ number.call }}</a></div>
+            </div>
+
+            <div class="top-right clearfix">
+                <!-- Info List -->
+                <ul class="info-list">
+                    <li>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'profile1:home' %}">
+                                {% trans 'Profile' %}
+                            </a>
+                            <a href="{% url 'profile1:history' %}">{% trans 'History' %}</a>
+                            <a href="{% url 'auth_logout' %}">{% trans 'Log out' %}</a>
+                        {% else %}
+                            <a href="{% url 'auth_login' %}">{% trans 'Sign in' %}</a>
+                        {% endif %}
+                    </li>
+                    <li class="quote"><a href="{% url 'service:contact' %}">Get Free Quote</a></li>
+                    {% get_current_language as lang %}
+                    {% get_available_languages as all_langs %}
+                    <li class="ml-2" href="{{ lang }}" style="color: white;cursor: pointer"><h4>{{ lang|upper }}</h4>
+                    </li>
+                    {% for l in all_langs %}
+                        {% if l.0 != lang %}
+                            <li class="ml-4 mr2">
+                                <a style="color: #f1a899; text-decoration: none"
+                                   href="{% get_lang_url request l.0 %}">
+                                    {{ l.0|upper }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Upper -->
+    <div class="header-upper">
+        <div class="inner-container">
+            <div class="auto-container clearfix">
+                <!--Info-->
+                <div class="logo-outer">
+                    <div class="logo"><a href="{% url 'products:home' %}">
+                        <img src="{% static 'images/logo.png' %}"
+                             alt="" title=""></a></div>
+                </div>
+                <!--Nav Box-->
+                <div class="nav-outer clearfix">
+                    <!--Mobile Navigation Toggler For Mobile-->
+                    <div class="mobile-nav-toggler"><span class="icon flaticon-menu-1"></span></div>
+                    <nav class="main-menu navbar-expand-md navbar-light">
+                        <div class="navbar-header">
+                            <!-- Togg le Button -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon flaticon-menu-1"></span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                {% url 'products:home' as home_url %}
+                                <li class="{% if request.path == home_url %}current {% endif %}">
+                                    <a href="{{ home_url }}">Home</a>
+                                </li>
+                                {% url 'service:about' as about %}
+                                <li class="{% if request.path == about %}current {% endif %}">
+                                    <a href="{{ about }}">About us</a></li>
+
+                                {#                                {% url 'products:interior' as interior %}#}
+                                {#                                <li class="{% if request.path == interior %}current dropdown{% endif %}">#}
+                                {#                                    <a href="{{ interior }}">Services</a></li>#}
+                                {% url 'post:home' as post %}
+                                <li class="{% if request.path == post %}current dropdown{% endif %}">
+                                    <a href="{{ post }}">Blog</a>
+                                </li>
+                                {% url 'service:shop' as shop %}
+                                <li class="{% if request.path == shop %}current dropdown{% endif %}">
+                                    <a href="{{ shop }}">Shop</a></li>
+                                {% url 'service:contact' as contact %}
+                                <li class="{% if request.path == contact %}current dropdown{% endif %}">
+                                    <a href="{{ contact }}">Contact</a></li>
+                                {% ugit initrl 'order:create' as checout %}
+                                <li git initclass="{% if request.path == checout %}current dropdown{% endif %}">
+                                    <a href="{{ checout }}">Checout</a></li>
+                                {% url 'products:card' as card %}
+                                <li class="{% if request.path == card %}current dropdown{% endif %}">
+                                    <a href="{{ card }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a></li>
+                                {% url 'order:create' as checout %}
+                                <li class="{% if request.path == checout %}current dropdown{% endif %}">
+                                    <a href="{{ checout }}">${% card_price request %}</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- Main Menu End-->
+
+                    <!-- Outer Box -->
+                    <div class="outer-box clearfix">
+                        <div class="search-box-btn"><span class="icon flaticon-magnifying-glass-1"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Header Upper-->
+
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><span class="icon flaticon-cancel"></span></div>
+
+        <nav class="menu-box">
+            <div class="nav-logo"><a href={% url 'products:home' %}><img src="{% static 'images/logo.png' %}" alt=""
+                                                                         title=""></a>
+            </div>
+            <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+            <!--Social Links-->
+            <div class="social-links">
+                <ul class="clearfix">
+                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                    <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- End Mobile Menu -->
+
+</header>

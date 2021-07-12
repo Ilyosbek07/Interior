@@ -1,0 +1,175 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url({% static 'images/background/5.jpg' %})">
+            <div class="auto-container">
+                <h2>{% if request.GET.tag %}
+                            #{{ request.GET.tag }}
+                        {% else %}
+                          {% trans 'Blog' %}
+                        {% endif %}</h2>
+                <ul class="page-breadcrumb">
+                    <li><a href="{% url 'products:home' %}">Home</a></li>
+                    <li>{% if request.GET.tag %}
+                            #{{ request.GET.tag }}
+                        {% else %}
+                          {% trans 'Blog' %}
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <!--Sidebar Page Container-->
+        <div class="sidebar-page-container">
+            <div class="auto-container">
+                <div class="row clearfix">
+
+                    <!--Content Side / Blog Classic -->
+                    <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12">
+                        <div class="blog-classic padding-right">
+                            {% for blog in blogs %}
+                                <div class="news-block-three">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <figure class="image"><a href="blog-detail.html"><img
+                                                    src="{{ blog.image.url }}" alt=""></a></figure>
+                                            <span class="date">9 may 2019</span>
+                                        </div>
+                                        <div class="lower-content">
+                                            <div class="post-meta">
+                                                <ul class="post-info clearfix">
+                                                    <li><a href="{% url 'post:detail' pk=blog.pk %}">By : admin</a></li>
+                                                    <li><a href="{% url 'post:detail' pk=blog.pk %}">interior,
+                                                        furniture</a></li>
+                                                    <li><a href="{% url 'post:detail' pk=blog.pk %}">Comments: 8</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <h3><a href="{% url 'post:detail' pk=blog.pk %}">{{ blog.title }}</a>
+                                            </h3>
+                                            <div class="text"><p>{{ blog.content|safe }}
+                                            </div>
+                                            <div class="link-box"><a href="{% url 'post:detail' pk=blog.pk %}"
+                                                                     class="theme-btn read-more">Read
+                                                more</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!--Styled Pagination-->
+                        <ul class="styled-pagination">
+                            {% for page in page_obj.paginator.page_range %}
+                                <li>
+                                    <a {% if page == page_obj.number %}
+                                        class="active" {% endif %} href="?page={{ page }}">{{ page }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.next_page_number }}"><span
+                                        class="fa fa-angle-right"></span>
+                                </a></li>
+                            {% endif %}
+                        </ul>
+                        <!--End Styled Pagination-->
+
+                    </div>
+
+                    <!--Sidebar Side-->
+                    <div class="sidebar-side col-xl-3 col-lg-4 col-md-12 col-sm-12">
+                        <aside class="sidebar">
+
+                            <!-- Search -->
+                            <div class="sidebar-widget search-box">
+                                <form>
+                                    {#                                    {% csrf_token %}#}
+                                    <div class="form-group">
+                                        <input value="{{ request.GET.q }}" name="q" type="text"
+                                               placeholder="Enter Search Keywords" required>
+                                        <button type="submit"><span class="icon fa fa-search"></span></button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!--Blog Category Widget-->
+                            <div class="sidebar-widget sidebar-blog-category">
+                                <div class="sidebar-title">
+                                    <h2>Categories</h2>
+                                </div>
+                                <ul class="cat-list">
+                                    {% for category in categories %}
+                                        <li>
+                                            <a href="{% url 'post:home' %}?cat={{ category.title }}">{{ category.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                            <!-- Popular Posts -->
+                            <div class="sidebar-widget popular-posts">
+                                <div class="sidebar-title"><h2>Recent News</h2></div>
+
+                                <article class="post">
+                                    <figure class="post-thumb"><a href="blog-detail.html"><img
+                                            src="{% static 'images/resource/post-thumb-1.jpg' %}" alt=""></a></figure>
+                                    <div class="text"><a href="blog-detail.html">Hanging fruit to identify a ballpark
+                                        value added ...</a></div>
+                                    <div class="post-info">12 April. 2019</div>
+                                </article>
+
+                                <article class="post">
+                                    <figure class="post-thumb"><a href="blog-detail.html"><img
+                                            src="{% static 'images/resource/post-thumb-2.jpg' %}" alt=""></a></figure>
+                                    <div class="text"><a href="blog-detail.html">Organically grow the holistic world
+                                        view ...</a></div>
+                                    <div class="post-info">12 April. 2019</div>
+                                </article>
+
+                                <article class="post">
+                                    <figure class="post-thumb"><a href="blog-detail.html"><img
+                                            src="{% static 'images/resource/post-thumb-3.jpg' %}" alt=""></a></figure>
+                                    <div class="text"><a href="blog-detail.html">Bring to the table in the win-win
+                                        survival ...</a></div>
+                                    <div class="post-info">12 April. 2019</div>
+                                </article>
+
+                                <article class="post">
+                                    <figure class="post-thumb"><a href="blog-detail.html"><img
+                                            src="{% static 'images/resource/post-thumb-4.jpg' %}" alt=""></a></figure>
+                                    <div class="text"><a href="blog-detail.html">Override the digital divide with
+                                        additional ...</a></div>
+                                    <div class="post-info">12 April. 2019</div>
+                                </article>
+
+                            </div>
+
+                            <!-- Popular Tags -->
+                            <div class="sidebar-widget popular-tags">
+                                <div class="sidebar-title"><h2>Tags</h2></div>
+                                {% for tag in tags %}
+                                    <a href="{% url 'post:home' %}?tag={{ tag.title }}">#{{ tag.title }}</a>
+                                {% endfor %}
+                            </div>
+
+                        </aside>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+

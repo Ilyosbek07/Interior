@@ -1,0 +1,211 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url({% static 'images/background/5.jpg' %})">
+            <div class="auto-container">
+                <h2>{% trans 'Blog Details' %}</h2>
+                <ul class="page-breadcrumb">
+                    <li><a href="{% url 'products:home' %}">{% trans 'Home' %}</a></li>
+                    <li>{% trans 'Blog Details' %} {{ object.pk }}</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <!--Sidebar Page Container-->
+        <div class="sidebar-page-container">
+            <div class="auto-container">
+                <div class="row clearfix">
+
+                    <!--Content Side / Blog Classic -->
+                    <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12">
+                        <div class="blog-single padding-right">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><img src="{{ object.image.url }}"
+                                                               alt="">
+                                    </figure>
+                                    <span class="date">{{ object.created_at|date:'d m Y' }}</span>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="post-meta">
+                                        <ul class="post-info clearfix">
+                                            <li><a href="{% url 'post:detail' pk=object.pk %}">By : admin</a></li>
+                                            <li><a href="{% url 'post:detail' pk=object.pk %}">
+                                                {% for tag in object.tags.all %}
+                                                    <a href="#">#{{ tag.title }}</a>
+                                                {% endfor %}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'post:detail' pk=object.pk %}#comment">Comments: {{ object.comment.count }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="lower-box">
+                                        <h3>{{ object.title }}</h3>
+                                        <div class="text">
+                                            <p>{{ object.content|safe }}</p>
+                                            <h4>Post Content</h4>
+                                            <div class="row clearfix">
+                                            </div>
+                                            <p>{{ object.post_detail|safe }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--Comments Area-->
+                            <div class="comments-area">
+                                <div id="comment" class="group-title"><h2>Comments {{ object.comment.count }}</h2></div>
+                                <div class="inner-box">
+                                    <!--Comment Box-->
+                                    {% for comment in object.get_comments %}
+                                        <div class="comment-box">
+                                            <div class="comment">
+                                                <div class="author-thumb"><img
+                                                        src="{% static 'images/resource/author-2.jpg' %}" alt=""></div>
+                                                <div class="comment-inner">
+                                                    <div class="comment-info clearfix">
+                                                        <strong>{{ comment.name }}</strong>
+                                                    </div>
+                                                    <div class="text">{{ comment.comment }}
+                                                    </div>
+                                                    <ul class="post-info">
+                                                        <li>{{ comment.created_at|timesince }}</li>
+                                                        <li><a href="">Reply</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- Comment Form -->
+                            <div class="comment-form">
+
+                                <div class="group-title"><h2>Leave a Comment</h2></div>
+                                <div class="form-inner" >
+                                    <!--Comment Form-->
+                                    <form method="POST" action="{% url 'post:comment' pk=object.pk %}#comment">
+                                        <div class="row clearfix">
+                                            {% csrf_token %}
+                                            <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                                <input type="text" name="name" placeholder="Your name">
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                                <input type="email" name="email" placeholder="Email address"
+                                                >
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                                <textarea name="comment" placeholder="Write message"></textarea>
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                                <button class="theme-btn submit-btn" type="submit">
+                                                    Post Comment
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--End Comment Form -->
+
+                        </div>
+                    </div>
+
+                    <!--Sidebar Side-->
+                    <div class="sidebar-side col-xl-3 col-lg-4 col-md-12 col-sm-12">
+                        <aside class="sidebar">
+
+                            <!-- Search -->
+                            <div class="sidebar-widget search-box">
+                                <form method="post">
+                                    <div class="form-group">
+                                        <input type="search" name="search-field" value=""
+                                               placeholder="Enter Search Keywords" required>
+                                        <button type="submit"><span class="icon fa fa-search"></span></button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!--Blog Category Widget-->
+                            <div class="sidebar-widget sidebar-blog-category">
+                                <div class="sidebar-title">
+                                    <h2>Categories</h2>
+                                </div>
+                                <ul class="cat-list">
+                                    {% for category in object.category.all %}
+                                        <li><a href="#">{{ category.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                            <!-- Popular Posts -->
+                            <div class="sidebar-widget popular-posts">
+                                <div class="sidebar-title"><h2>Recent News</h2></div>
+
+                                <article class="post">
+                                    <figure class="post-thumb"><a href="blog-detail.html"><img
+                                            src="{% static 'images/resource/post-thumb-1.jpg' %}" alt=""></a></figure>
+                                    <div class="text"><a href="blog-detail.html">Hanging fruit to identify a ballpark
+                                        value added ...</a></div>
+                                    <div class="post-info">12 April. 2019</div>
+                                </article>
+
+                                <article class="post">
+                                    <figure class="post-thumb"><a href="blog-detail.html"><img
+                                            src="{% static 'images/resource/post-thumb-2.jpg' %}" alt=""></a></figure>
+                                    <div class="text"><a href="blog-detail.html">Organically grow the holistic world
+                                        view ...</a></div>
+                                    <div class="post-info">12 April. 2019</div>
+                                </article>
+
+                                <article class="post">
+                                    <figure class="post-thumb"><a href="blog-detail.html"><img
+                                            src="{% static 'images/resource/post-thumb-3.jpg' %}" alt=""></a></figure>
+                                    <div class="text"><a href="blog-detail.html">Bring to the table in the win-win
+                                        survival ...</a></div>
+                                    <div class="post-info">12 April. 2019</div>
+                                </article>
+
+                                {#                                <article class="post">#}
+                                {#                                    <figure class="post-thumb"><a href="blog-detail.html">#}
+                                {#                                        <div class="text"><a href="blog-detail.html">Override the digital divide with#}
+                                {#                                            additional ...</a></div>#}
+                                {#                                        <div class="post-info">12 April. 2019</div>#}
+                                {#                                    </a></figure>#}
+                                {#                                </article>#}
+
+                            </div>
+
+                            <!-- Popular Tags -->
+                            <div class="sidebar-widget popular-tags">
+                                <div class="sidebar-title"><h2>Tags</h2></div>
+                                {% for tag in object.tags.all %}
+                                    <a href="#">#{{ tag.title }}</a>
+                                {% endfor %}
+                            </div>
+
+                        </aside>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+

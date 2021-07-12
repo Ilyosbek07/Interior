@@ -1,0 +1,152 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load my_tags %}
+
+{% block content %}
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url({% static 'images/background/5.jpg' %})">
+            <div class="auto-container">
+                <h2>Profile</h2>
+                <ul class="page-breadcrumb">
+                    <li><a href="{% url 'products:home' %}">Home</a></li>
+                    <li>Profile</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <!--Checkout Page-->
+        <div class="checkout-page">
+            <div class="container">
+                <!--Billing Details-->
+                <div class="billing-details">
+                    <div class="shop-form">
+                        <form method="post" action="{% url 'profile:home' %}">
+                            {{ form.errors }}
+                            {% csrf_token   %}
+                            <div class="row clearfix">
+                                <div class="col-lg-7 col-md-12 col-sm-12">
+
+                                    <div class="title-box"><h2>Billing Details</h2></div>
+                                    <div class="billing-inner">
+                                        <div class="row clearfix">
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="field-label">First name <sup>*</sup></div>
+                                                {{ form.first_name }}
+                                            </div>
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="field-label">Last name <sup>*</sup></div>
+                                                {#                                                <input type="text" name="field-name" value="" placeholder="Last Name">#}
+                                                {{ form.last_name }}
+                                            </div>
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="field-label">Company name</div>
+                                                {#                                                <input type="text" name="field-name" value=""#}
+                                                {#                                                       placeholder="Company name">#}
+                                                {{ form.company }}
+                                            </div>
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="field-label">Address <sup>*</sup></div>
+                                                {#                                                <input type="email" name="field-name" value=""#}
+                                                {#                                                       placeholder="Street Address">#}
+                                                {{ form.address1 }}
+                                                {#                                                <input class="address-two" type="email" name="field-name" value=""#}
+                                                {#                                                       placeholder="Apartment, Suit unit etc (optional)">#}
+                                                {{ form.address2 }}
+                                            </div>
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="field-label">Town / City <sup>*</sup></div>
+                                                {#                                                <input type="text" name="field-name" value="" placeholder="Town /City">#}
+                                                {{ form.city }}
+                                            </div>
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                <span>Country </span><sup>*</sup>
+                                                {#                                                <select name="country">#}
+                                                {#                                                    <option>Select an option</option>#}
+                                                {#                                                    <option>O'zbekiston</option>#}
+                                                {#                                                    <option>Россия</option>#}
+                                                {#                                                    <option>USA</option>#}
+                                                {#                                                    <option>CANADA</option>#}
+                                                {#                                                </select>#}
+                                                {{ form.state }}
+                                            </div>
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                <div class="field-label">Postcode / Zip <sup>*</sup></div>
+                                                {#                                                <input type="text" name="code" value="" placeholder="Postcode / Zip">#}
+                                                {{ form.postcode }}
+                                            </div>
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                <div class="field-label">Email Address <sup>*</sup></div>
+                                                {#                                                <input type="text" name="field-name" value=""#}
+                                                {#                                                       placeholder="Email Address">#}
+                                                {{ form.email }}
+                                            </div>
+
+                                            <!--Form Group-->
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                                <div class="field-label">Phone <sup>*</sup></div>
+                                                {#                                                <input type="text" name="field-name" value=""#}
+                                                {#                                                       placeholder="Select an option">#}
+                                                {{ form.phone }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="auto-container">
+                                {##}
+                                <div class="shop-single">
+                                    <div class="product-details">
+                                        {##}
+                                        {#                                <!--Basic Details-->#}
+                                        <div class="basic-details">
+                                            <div class="row clearfix">
+                                                <div class="info-column col-lg-6 col-md-12 col-sm-12">
+                                                    <div class="inner-column">
+                                                        <div class="other-options clearfix">
+                                                            <div class="item-quantity">
+                                                                <a href="{% url 'auth_password_change' %}">
+                                                                    <button type="button"
+                                                                            class="ml-2 theme-btn cart-btn">Change
+                                                                        password
+                                                                    </button>
+                                                                </a>
+                                                                <button type="submit" class="ml-5 theme-btn cart-btn">
+                                                                    Save
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><!--End Billing Details-->
+            </div>
+        </div>
+    </div>
+{% endblock %}

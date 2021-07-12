@@ -1,0 +1,768 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 14:19+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\hotel002\settings.py:89
+msgid "English"
+msgstr ""
+
+#: .\hotel002\settings.py:90
+msgid "Uzbek"
+msgstr ""
+
+#: .\hotel002\settings.py:91
+msgid "Russian"
+msgstr ""
+
+#: .\order\models.py:13 .\users\models.py:10
+msgid "first_name"
+msgstr ""
+
+#: .\order\models.py:14 .\users\models.py:11
+msgid "last_name"
+msgstr ""
+
+#: .\order\models.py:15 .\users\models.py:14
+msgid "company"
+msgstr ""
+
+#: .\order\models.py:16 .\service\models.py:77 .\users\models.py:12
+msgid "phone"
+msgstr ""
+
+#: .\order\models.py:17 .\service\models.py:60 .\service\models.py:75
+#: .\users\models.py:13
+msgid "email"
+msgstr ""
+
+#: .\order\models.py:18 .\users\models.py:16
+msgid "address1"
+msgstr ""
+
+#: .\order\models.py:19 .\users\models.py:17
+msgid "address2"
+msgstr ""
+
+#: .\order\models.py:20 .\users\models.py:18
+msgid "city"
+msgstr ""
+
+#: .\order\models.py:21 .\users\models.py:19
+msgid "state"
+msgstr ""
+
+#: .\order\models.py:22 .\users\models.py:20
+msgid "postcode"
+msgstr ""
+
+#: .\order\models.py:30
+msgid "oreder"
+msgstr ""
+
+#: .\order\models.py:31
+msgid "orders"
+msgstr ""
+
+#: .\products\models.py:7 .\products\models.py:22 .\products\models.py:37
+#: .\products\models.py:52 .\service\models.py:7 .\service\models.py:23
+msgid "title"
+msgstr ""
+
+#: .\products\models.py:8 .\products\models.py:23 .\products\models.py:38
+#: .\products\models.py:54 .\service\models.py:8 .\service\models.py:24
+#: .\service\models.py:38
+msgid "content"
+msgstr ""
+
+#: .\products\models.py:9 .\products\models.py:24 .\products\models.py:39
+#: .\products\models.py:55 .\service\models.py:10 .\service\models.py:40
+msgid "image"
+msgstr ""
+
+#: .\products\models.py:11 .\products\models.py:26 .\products\models.py:41
+#: .\products\models.py:58 .\service\models.py:12 .\service\models.py:26
+#: .\service\models.py:43 .\service\models.py:63 .\service\models.py:79
+msgid "created_at"
+msgstr ""
+
+#: .\products\models.py:17
+msgid "post"
+msgstr ""
+
+#: .\products\models.py:18
+msgid "posts"
+msgstr ""
+
+#: .\products\models.py:32
+msgid "carusel"
+msgstr ""
+
+#: .\products\models.py:33
+msgid "carusels"
+msgstr ""
+
+#: .\products\models.py:47
+msgid "blog"
+msgstr ""
+
+#: .\products\models.py:48
+msgid "blogs"
+msgstr ""
+
+#: .\products\models.py:56
+msgid "price"
+msgstr ""
+
+#: .\products\models.py:71
+msgid "product"
+msgstr ""
+
+#: .\products\models.py:72
+msgid "products"
+msgstr ""
+
+#: .\service\models.py:9
+msgid "long_description"
+msgstr ""
+
+#: .\service\models.py:18
+msgid "story"
+msgstr ""
+
+#: .\service\models.py:19
+msgid "stories"
+msgstr ""
+
+#: .\service\models.py:32
+msgid "service"
+msgstr ""
+
+#: .\service\models.py:33
+msgid "services"
+msgstr ""
+
+#: .\service\models.py:37 .\service\models.py:59 .\service\models.py:74
+msgid "name"
+msgstr ""
+
+#: .\service\models.py:39
+msgid "job"
+msgstr ""
+
+#: .\service\models.py:49
+msgid "team"
+msgstr ""
+
+#: .\service\models.py:50
+msgid "teams"
+msgstr ""
+
+#: .\service\models.py:61 .\service\models.py:69
+msgid "comment"
+msgstr ""
+
+#: .\service\models.py:70
+msgid "comments"
+msgstr ""
+
+#: .\service\models.py:76
+msgid "message"
+msgstr ""
+
+#: .\service\models.py:85
+msgid "contact"
+msgstr ""
+
+#: .\service\models.py:86
+msgid "contacts"
+msgstr ""
+
+#: .\templates\about.html:64
+msgid ""
+"\n"
+"                                    <h2>Why Choose Us for Interior Work</"
+"h2>\n"
+"                                    <div class=\"text\">To give you a home "
+"that lasts, we bring you only the best in\n"
+"                                        everything — quality raw materials, "
+"state-of-the-art manufacturing, rigorous\n"
+"                                        quality\n"
+"                                        checks, professional installations "
+"and transparent prices.\n"
+"                                    </div>\n"
+"                                    <div class=\"row clearfix\">\n"
+"\n"
+"                                    <!-- Interior Block -->\n"
+"                                    <div class=\"interior-block col-lg-4 col-"
+"md-4 col-sm-12\">\n"
+"                                        <div class=\"block-inner\">\n"
+"                                            <div class=\"icon-box\">\n"
+"                                                <span class=\"icon flaticon-"
+"award-1\"></span>\n"
+"                                            </div>\n"
+"                                            <h3>Superior Quality</h3>\n"
+"                                        </div>\n"
+"                                    </div>\n"
+"\n"
+"                                    <!-- Interior Block -->\n"
+"                                    <div class=\"interior-block col-lg-4 col-"
+"md-4 col-sm-12\">\n"
+"                                        <div class=\"block-inner\">\n"
+"                                            <div class=\"icon-box\">\n"
+"                                                <span class=\"icon flaticon-"
+"answer\"></span>\n"
+"                                            </div>\n"
+"                                            <h3>Professional Team</h3>\n"
+"                                        </div>\n"
+"                                    </div>\n"
+"\n"
+"                                    <!-- Interior Block -->\n"
+"                                    <div class=\"interior-block col-lg-4 col-"
+"md-4 col-sm-12\">\n"
+"                                        <div class=\"block-inner\">\n"
+"                                            <div class=\"icon-box\">\n"
+"                                                <span class=\"icon flaticon-"
+"hand\"></span>\n"
+"                                            </div>\n"
+"                                            <h3>Unmatched Warranty</h3>\n"
+"                                        </div>\n"
+"                                    </div>\n"
+"                                "
+msgstr ""
+
+#: .\templates\about.html:233
+msgid ""
+"\n"
+"                                <h2>Our Company Mission</h2>\n"
+"                                <div class=\"bold-text\">we believe that "
+"interior design is more than great functionality\n"
+"                                    and\n"
+"                                    <br> beautiful aesthetics.\n"
+"                                </div>\n"
+"                                <div class=\"text\">WThe aesthetics and "
+"functional aspects are the primary elements of a\n"
+"                                    smart\n"
+"                                    interior design. We as the prominent "
+"Interior Design Consultant in Noida keep these\n"
+"                                    elements at our highest priority. We "
+"provide the best suggestions for Interior\n"
+"                                    Designing\n"
+"                                    of a given space\n"
+"                                </div>\n"
+"                                <h3>Our Interior designers help you for "
+"classic look…</h3>\n"
+"                                <div class=\"row clearfix\">\n"
+"                                <div class=\"column col-lg-6 col-md-6 col-"
+"sm-12\">\n"
+"                                    <ul class=\"list-style-two\">\n"
+"                                        <li>- Best Design Consultancy</li>\n"
+"                                        <li>- Architect Designer</li>\n"
+"                                        <li>- Turnkey Projects</li>\n"
+"                                    </ul>\n"
+"                                </div>\n"
+"                                <div class=\"column col-lg-6 col-md-6 col-"
+"sm-12\">\n"
+"                                    <ul class=\"list-style-two\">\n"
+"                                        <li>- Residential Designs</li>\n"
+"                                        <li>- Corporate Designs</li>\n"
+"                                        <li>- Commercial Designs</li>\n"
+"                                    </ul>\n"
+"                                </div>\n"
+"                            "
+msgstr ""
+
+#: .\templates\about.html:275
+msgid ""
+"\n"
+"                    <h2>Think Interior. Think Stella Orr'e</h2>\n"
+"                    <div class=\"text\">Interiors for all styles and "
+"budgets, Choose from thousands of <br> designs. Heart\n"
+"                        your favorites to shortlist.\n"
+"                    </div>\n"
+"                "
+msgstr ""
+
+#: .\templates\about.html:283
+msgid "Contact us"
+msgstr ""
+
+#: .\templates\contact.html:25
+msgid ""
+"\n"
+"                    <div class=\"sec-title\">\n"
+"                        <h2>Get In Touch</h2>\n"
+"                        <div class=\"text\">Do you have anything in your "
+"mind to let us know? Kindly don't delay to\n"
+"                            connect to\n"
+"                            us by means of our contact form.\n"
+"                        </div>\n"
+"                    </div>\n"
+"                "
+msgstr ""
+
+#: .\templates\contact.html:42
+msgid "Your name"
+msgstr ""
+
+#: .\templates\contact.html:46
+msgid "Email address"
+msgstr ""
+
+#: .\templates\contact.html:50
+msgid "Phone"
+msgstr ""
+
+#: .\templates\contact.html:54
+msgid "Message"
+msgstr ""
+
+#: .\templates\contact.html:59
+msgid "Submit now"
+msgstr ""
+
+#: .\templates\contact.html:84
+msgid "Opening hour"
+msgstr ""
+
+#: .\templates\index.html:44
+msgid ""
+"\n"
+"                        <h2>Awesome place & what improves <br> explore "
+"radiance.</h2>\n"
+"                    "
+msgstr ""
+
+#: .\templates\index.html:80
+msgid ""
+"\n"
+"                        <h2>Our Services</h2>\n"
+"                        <div class=\"text\">Osed quia consequuntur magni "
+"dolores eos qui ratione voluptatem sequi\n"
+"                            nesciunt.\n"
+"                            Neque porro quisquam est, qui dolorem ipsum quia "
+"dolor sit amet, consectetur, adipisci sed\n"
+"                            quia\n"
+"                            non numquam qui ratione voluptatem sequi "
+"nesciunt.\n"
+"                        </div>\n"
+"                    "
+msgstr ""
+
+#: .\templates\index.html:118
+msgid ""
+"\n"
+"                    <div class=\"title-box\">\n"
+"                        <h2>Our Latest Projects</h2>\n"
+"                    </div>\n"
+"                    </div>\n"
+"\n"
+"                    <div class=\"outer-container\">\n"
+"\n"
+"                    <!--Isotope Galery-->\n"
+"                    <div class=\"sortable-masonry\">\n"
+"                    <!--Filter-->\n"
+"                    <div class=\"filters clearfix\">\n"
+"                        <ul class=\"filter-tabs filter-btns text-center "
+"clearfix\">\n"
+"                            <li class=\"active filter\" data-role=\"button\" "
+"data-filter=\".all\">All Projects</li>\n"
+"                            <li class=\"filter\" data-role=\"button\" data-"
+"filter=\".residential\">Residential</li>\n"
+"                            <li class=\"filter\" data-role=\"button\" data-"
+"filter=\".commercial\">Commercial</li>\n"
+"                            <li class=\"filter\" data-role=\"button\" data-"
+"filter=\".hospital\">Hospitality</li>\n"
+"                            <li class=\"filter\" data-role=\"button\" data-"
+"filter=\".office\">Office</li>\n"
+"                        </ul>\n"
+"\n"
+"                    </div>\n"
+"                "
+msgstr ""
+
+#: .\templates\layouts\header.html:22
+msgid "Profile"
+msgstr ""
+
+#: .\templates\layouts\header.html:24
+msgid "History"
+msgstr ""
+
+#: .\templates\layouts\header.html:25
+msgid "Log out"
+msgstr ""
+
+#: .\templates\layouts\header.html:27
+msgid "Sign in"
+msgstr ""
+
+#: .\templates\registration\activate.html:4
+msgid "Activation Failure"
+msgstr ""
+
+#: .\templates\registration\activate.html:7
+msgid "Account activation failed."
+msgstr ""
+
+#: .\templates\registration\activation_complete.html:4
+#: .\templates\registration\activation_complete_admin_pending.html:4
+msgid "Account Activated"
+msgstr ""
+
+#: .\templates\registration\activation_complete.html:8
+#: .\templates\registration\activation_complete_admin_pending.html:8
+msgid "Your account is now activated."
+msgstr ""
+
+#: .\templates\registration\activation_complete.html:10
+msgid "You can log in."
+msgstr ""
+
+#: .\templates\registration\activation_complete_admin_pending.html:10
+msgid "Once a site administrator activates your account you can login."
+msgstr ""
+
+#: .\templates\registration\activation_email.html:6
+#: .\templates\registration\admin_approve_email.html:6
+msgid "registration"
+msgstr ""
+
+#: .\templates\registration\activation_email.html:11
+#, python-format
+msgid ""
+"\n"
+"    You (or someone pretending to be you) have asked to register an account "
+"at\n"
+"    %(site_name)s.  If this wasn't you, please ignore this email\n"
+"    and your address will be removed from our records.\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\activation_email.html:18
+#, python-format
+msgid ""
+"\n"
+"    To activate this account, please click the following link within the "
+"next\n"
+"    %(expiration_days)s days:\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\activation_email.html:30
+#: .\templates\registration\admin_approve_email.html:23
+#, python-format
+msgid ""
+"\n"
+"    Sincerely,\n"
+"    %(site_name)s Management\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"You (or someone pretending to be you) have asked to register an account at\n"
+"%(site_name)s.  If this wasn't you, please ignore this email\n"
+"and your address will be removed from our records.\n"
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:7
+#, python-format
+msgid ""
+"\n"
+"To activate this account, please click the following link within the next\n"
+"%(expiration_days)s days:\n"
+msgstr ""
+
+#: .\templates\registration\activation_email.txt:14
+#, python-format
+msgid ""
+"\n"
+"Sincerely,\n"
+"%(site_name)s Management\n"
+msgstr ""
+
+#: .\templates\registration\activation_email_subject.txt:1
+#: .\templates\registration\admin_approve_complete_email_subject.txt:1
+msgid "Account activation on"
+msgstr ""
+
+#: .\templates\registration\admin_approve.html:4
+msgid "Approval Failure"
+msgstr ""
+
+#: .\templates\registration\admin_approve.html:7
+msgid "Account Approval failed."
+msgstr ""
+
+#: .\templates\registration\admin_approve_complete.html:4
+msgid "Account Approved"
+msgstr ""
+
+#: .\templates\registration\admin_approve_complete.html:8
+msgid "The user's account is now approved."
+msgstr ""
+
+#: .\templates\registration\admin_approve_complete_email.html:6
+msgid "admin approval"
+msgstr ""
+
+#: .\templates\registration\admin_approve_complete_email.html:11
+msgid ""
+"\n"
+"    Your account is now approved. You can \n"
+"    "
+msgstr ""
+
+#: .\templates\registration\admin_approve_complete_email.html:14
+msgid "log in."
+msgstr ""
+
+#: .\templates\registration\admin_approve_complete_email.txt:2
+msgid ""
+"\n"
+"Your account is now approved. You can log in using the following link\n"
+msgstr ""
+
+#: .\templates\registration\admin_approve_email.html:11
+#, python-format
+msgid ""
+"\n"
+"    The following user (%(user)s) has asked to register an account at\n"
+"    %(site_name)s.\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\admin_approve_email.html:17
+msgid ""
+"\n"
+"    To approve this, please\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\admin_approve_email.html:20
+msgid "click here"
+msgstr ""
+
+#: .\templates\registration\admin_approve_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"The following user (%(user)s) has asked to register an account at\n"
+"%(site_name)s.\n"
+msgstr ""
+
+#: .\templates\registration\admin_approve_email.txt:6
+msgid ""
+"\n"
+"To approve this, please click the following link.\n"
+msgstr ""
+
+#: .\templates\registration\admin_approve_email_subject.txt:1
+msgid "Account approval on"
+msgstr ""
+
+#: .\templates\registration\login.html:4 .\templates\registration\login.html:18
+msgid "Log in"
+msgstr ""
+
+#: .\templates\registration\login.html:20
+msgid "Forgot your password?"
+msgstr ""
+
+#: .\templates\registration\login.html:22
+msgid "Reset it"
+msgstr ""
+
+#: .\templates\registration\login.html:25
+msgid "Not a member?"
+msgstr ""
+
+#: .\templates\registration\login.html:27
+msgid "Register"
+msgstr ""
+
+#: .\templates\registration\logout.html:4
+msgid "Logged out"
+msgstr ""
+
+#: .\templates\registration\logout.html:7
+msgid "Successfully logged out"
+msgstr ""
+
+#: .\templates\registration\password_change_done.html:4
+msgid "Password changed"
+msgstr ""
+
+#: .\templates\registration\password_change_done.html:7
+msgid "Password successfully changed!"
+msgstr ""
+
+#: .\templates\registration\password_change_form.html:4
+#: .\templates\registration\password_change_form.html:10
+msgid "Change password"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:4
+msgid "Password reset complete"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:8
+msgid "Your password has been reset!"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:9
+#, python-format
+msgid "You may now <a href=\"%(login_url)s\">log in</a>"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:10
+msgid "Confirm password reset"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:14
+msgid "Enter your new password below to reset your password:"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:18
+msgid "Set password"
+msgstr ""
+
+#: .\templates\registration\password_reset_done.html:4
+msgid "Password reset"
+msgstr ""
+
+#: .\templates\registration\password_reset_done.html:8
+msgid ""
+"\n"
+"    We have sent you an email with a link to reset your password. Please "
+"check\n"
+"    your email and click the link to continue.\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:3
+msgid "Greetings"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:5
+#, python-format
+msgid ""
+"\n"
+"You are receiving this email because you (or someone pretending to be you)\n"
+"requested that your password be reset on the %(domain)s site. If you do not\n"
+"wish to reset your password, please ignore this message.\n"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:11
+msgid ""
+"\n"
+"To reset your password, please click the following link, or copy and paste "
+"it\n"
+"into your web browser:\n"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:20
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:23
+msgid "Best regards"
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:24
+msgid "Management"
+msgstr ""
+
+#: .\templates\registration\password_reset_form.html:4
+#: .\templates\registration\password_reset_form.html:15
+msgid "Reset password"
+msgstr ""
+
+#: .\templates\registration\password_reset_form.html:8
+msgid ""
+"\n"
+"    Forgot your password? Enter your email in the form below and we'll send "
+"you instructions for creating a new one.\n"
+"    "
+msgstr ""
+
+#: .\templates\registration\registration_closed.html:4
+msgid "Registration is closed"
+msgstr ""
+
+#: .\templates\registration\registration_closed.html:7
+msgid "Sorry, but registration is closed at this moment. Come back later."
+msgstr ""
+
+#: .\templates\registration\registration_complete.html:4
+msgid "Activation email sent"
+msgstr ""
+
+#: .\templates\registration\registration_complete.html:7
+msgid "Please check your email to complete the registration process."
+msgstr ""
+
+#: .\templates\registration\registration_form.html:4
+msgid "Register for an account"
+msgstr ""
+
+#: .\templates\registration\registration_form.html:24
+#: .\templates\registration\resend_activation_form.html:10
+msgid "Submit"
+msgstr ""
+
+#: .\templates\registration\registration_form.html:26
+msgid "Do you login this web-site go this page"
+msgstr ""
+
+#: .\templates\registration\registration_form.html:28
+msgid "Go to Login"
+msgstr ""
+
+#: .\templates\registration\resend_activation_complete.html:4
+msgid "Account Activation Resent"
+msgstr ""
+
+#: .\templates\registration\resend_activation_complete.html:8
+#, python-format
+msgid ""
+"\n"
+"  We have sent an email to %(email)s with further instructions.\n"
+"  "
+msgstr ""
+
+#: .\templates\registration\resend_activation_form.html:4
+msgid "Resend Activation Email"
+msgstr ""
+
+#: .\users\models.py:15
+msgid "country"
+msgstr ""
+
+#: .\users\models.py:26
+msgid "profile"
+msgstr ""
+
+#: .\users\models.py:27
+msgid "profiles"
+msgstr ""

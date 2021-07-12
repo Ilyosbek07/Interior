@@ -1,0 +1,123 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+        <section class="page-title" style="background-image:url({% static 'images/background/5.jpg' %})">
+            <div class="auto-container">
+                <h2>{% trans 'Contact Us' %}</h2>
+                <ul class="page-breadcrumb">
+                    <li><a href="{% url 'products:home' %}">{% trans 'Home' %}</a></li>
+                    <li>{% trans 'Contact Us' %}</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section"
+                 style="background-image:url({% static 'images/background/contact.png' %})">
+            <div class="auto-container">
+                <!-- Sec Title -->
+                <div class="sec-title">
+                    <h2>{% trans 'Get In Touch' %}</h2>
+                    <div class="text">{% blocktrans %}Do you have anything in your mind to let us know? Kindly don't
+                        delay to
+                        connect to
+                        us by means of our contact form.
+                    {% endblocktrans %}
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="form-column col-lg-7 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <div class="contact-form">
+                                <form method="POST">
+                                    <div class="row clearfix">
+                                        {% csrf_token %}
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <input type="text" name="name" placeholder="{% trans 'Your name' %}"
+                                                   required>
+                                        </div>
+
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <input type="email" name="email" placeholder="{% trans 'Email address' %}"
+                                                   required>
+                                        </div>
+
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <input type="text" name="phone" placeholder="{% trans 'Phone' %}" required>
+                                        </div>
+
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <textarea name="message" placeholder="{% trans 'Message' %}"></textarea>
+                                        </div>
+
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <button class="theme-btn btn-style-one" type="submit" name="submit-form">
+                                                <span class="txt">{% trans 'Submit now' %}</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    {##}
+                    <!-- Info Column -->
+                    <div class="info-column col-lg-5 col-md-12 col-sm-12">
+                        <div class="inner-column">
+
+                            <!-- Contact Info List -->
+                            <ul class="contact-info-list">
+                                <li><strong>{% trans 'Address' %} :</strong><br>Bobir Akilkhanov academy</li>
+                            </ul>
+                            <!-- Contact Info List -->
+                            <ul class="contact-info-list">
+                                <li><strong>{% trans 'Phone' %} : </strong><a href="tel:1800-456-7890">+998 97 000 00
+                                    01</a></li>
+                                <li><strong>{% trans 'Email' %} : </strong><a
+                                        href="mailto:info@stellaorre.com">ba?@gmail.com</a></li>
+                            </ul>
+                            <!-- Contact Info List -->
+                            <ul class="contact-info-list">
+                                <li><strong>{% trans 'Opening hour' %} :</strong><br>8:00 AM – 5:00 PM <br> Monday –
+                                    Sunday
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Contact Form Section -->
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="outer-container">
+                <div class="map-outer">
+                    <div class="map-data w-100">
+                        <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.0050616838507!2d69.20143191463089!3d41.3522437061374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef5a5822ee0b7%3A0x8a2391a66774b812!2sNAPA%20Team!5e0!3m2!1suz!2s!4v1625640460962!5m2!1suz!2s"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        {#                         data-zoom="12"#}
+                        {#                         data-lat="-37.817085"#}
+                        {#                         data-lng="144.955631"#}
+                        {#                         data-type="roadmap"#}
+                        {#                         data-hue="#ffc400"#}
+                        {#                         data-title="Melbourne Australia"#}
+                        {#                         data-icon-path="{% static 'images/icons/map-marker.png' %}"#}
+                        {#                         data-content="(1800) 456 7890 <br> Mon-Sat: 7.00an - 9.00pm">#}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Map Section -->
+    </div>
+
+{% endblock %}

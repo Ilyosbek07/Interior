@@ -1,0 +1,54 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+        <section class="page-title" style="background-image:url({% static 'images/background/5.jpg' %})">
+            <div class="auto-container">
+                <h2>{% trans 'Shop' %}</h2>
+                <ul class="page-breadcrumb">
+                    <li><a href="{% url 'products:home' %}">{% trans 'Home' %}</a></li>
+                    <li>{% trans 'Shop' %}</li>
+                </ul>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <!--Shop Single Section-->
+        <section class="services-page-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+
+                    <!-- Service Block -->
+                    {% for pr in product %}
+                        <div class="service-block-three col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInUp" data-wow-delay="250ms" data-wow-duration="1500ms">
+                                <div class="image">
+                                    <a href="">
+                                        <img src="{{ pr.image.url }}" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="lower-content">
+                                    <h3><a href="{% url 'service:pro' pk=pr.pk %}">{{ pr.title }}</a></h3>
+                                    <div class="text">{{ pr.short_description }}
+                                    </div>
+                                    <div class="price" style="background-color: white; color: #111111">Price :
+                                        <a href="{% url 'service:pro' pk=pr.pk %}">
+                                            <span>${{ pr.price }}</span>
+                                        </a>
+                                    </div>
+                                    <a href="{% url 'service:pro' pk=pr.pk %}" class="read-more">Sale</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--End Shop Single Section-->
+{% endblock %}
+

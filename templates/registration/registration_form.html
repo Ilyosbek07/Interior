@@ -1,0 +1,35 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+
+{% block content %}
+    <div class="form card-body">
+        <h2 class="title">Registration</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="input-group">
+                <input class="input--style-2" type="text" placeholder="Username" name="username">
+            </div>
+            <div class="input-group">
+                <input class="input--style-2" type="email" placeholder="Your email" name="email">
+            </div>
+            <div class="input-group">
+                <input class="input--style-2" type="password" placeholder="Password" name="password1">
+            </div>
+            <div class="input-group">
+                <input class="input--style-2" type="password" placeholder="Comfire password" name="password2">
+            </div>
+            <div class="p-t-30">
+                <input class="btn-info" type="submit" value="{% trans 'Submit' %}"/>
+                <input type="hidden" name="next" value="{{ next }}"/>
+                <p class="text-center mt-3">{% trans "Do you login this web-site go this page" %}
+                    <a style="text-decoration: none;" href="{% url 'auth_login' %}">
+                        {% trans "Go to Login" %}
+                    </a>
+                </p>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+

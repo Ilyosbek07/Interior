@@ -1,0 +1,465 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!-- Main Slider -->
+        <section class="main-slider">
+            <div class="slider-box">
+
+                <!-- Banner Carousel -->
+                <div class="banner-carousel owl-theme owl-carousel">
+                    <!-- Slide -->
+                    {% for carusel in carusels %}
+                        <div class="slide">
+                            <div class="image-layer" style="background-image:url({{ carusel.image.url }})"></div>
+                            <div class="auto-container">
+                                <div class="content">
+                                    <h2>{{ carusel.title }}</h2>
+                                    <div class="text">{{ carusel.content }}
+                                    </div>
+                                    <div class="btns-box">
+                                        <a href="{% url 'service:about' %}" class="theme-btn btn-style-one"><span
+                                                class="txt">Know more</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section>
+        <!-- End Banner Section -->
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="auto-container">
+                <!-- Title Box -->
+                <div class="title-box">
+                    {% blocktrans %}
+                        <h2>Awesome place & what improves <br> explore radiance.</h2>
+                    {% endblocktrans %}
+                </div>
+
+                <div class="row clearfix">
+                    {% for post in posts %}
+                        <div class="service-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <div class="image">
+                                    <a href="{% url 'post:detail' pk=post.pk %}">
+                                        <img src="{{ post.image.url }}" alt=""/>
+                                    </a>
+                                </div>
+                                <div class="lower-content">
+                                    <h3>
+                                        <a href="{% url 'post:detail' pk=post.pk %}">{{ post.title }}</a>
+                                    </h3>
+                                    <div class="text">
+                                        {{ post.content|safe }}
+                                    </div>
+                                    <a href="{% url 'post:detail' pk=post.pk %}" class="read-more">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- End Services Section -->
+
+        <!-- Services Section Two -->
+        <section class="services-section-two">
+            <div class="auto-container">
+                <!-- Sec Title -->
+                <div class="sec-title">
+                    <h2>{% trans 'Our Services' %}</h2>
+                    <div class="text">{% blocktrans %}Osed quia consequuntur magni dolores eos qui ratione voluptatem
+                        sequi
+                        nesciunt.
+                        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed
+                        quia
+                        non numquam qui ratione voluptatem sequi nesciunt.
+                    {% endblocktrans %}
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+
+                    <!-- Service Block -->
+                    {% for interier in interiers %}
+                        <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <div class="content">
+                                    <div class="icon-box">
+                                        <span class="icon flaticon-desk-1"></span>
+                                    </div>
+                                    <h3><a href="{% url 'service:office' %}">{{ interier.title }}</a></h3>
+                                    <div class="text">{{ interier.content }}
+                                    </div>
+                                    <a href="{% url 'service:office' %}" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- End Services Section Two -->
+
+        <!-- Project Section -->
+        <section class="project-section">
+            <div class="auto-container">
+                <!-- Title Box -->
+                    <div class="title-box">
+                        <h2>{% trans 'Our Latest Projects' %}</h2>
+                    </div>
+                    </div>
+
+                    <div class="outer-container">
+
+                    <!--Isotope Galery-->
+                    <div class="sortable-masonry">
+                    <!--Filter-->
+                    <div class="filters clearfix">
+                        <ul class="filter-tabs filter-btns text-center clearfix">
+                            <li class="active filter" data-role="button" data-filter=".all">All Projects</li>
+                            <li class="filter" data-role="button" data-filter=".residential">Residential</li>
+                            <li class="filter" data-role="button" data-filter=".commercial">Commercial</li>
+                            <li class="filter" data-role="button" data-filter=".hospital">Hospitality</li>
+                            <li class="filter" data-role="button" data-filter=".office">Office</li>
+                        </ul>
+
+                    </div>
+
+                <div class="items-container row clearfix">
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item large-block masonry-item all hospital commercial">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{% static 'images/gallery/1.jpg' %}" alt="">
+                                <!--Overlay Box-->
+                                <div class="overlay-box">
+                                    <div class="overlay-inner">
+                                        <div class="content">
+                                            <h3><a href="{% url 'service:about' %}">Modular Kitchen</a></h3>
+                                            <a href="{% static 'images/gallery/1.jpg' %}" data-fancybox="gallery-1"
+                                               data-caption="" class="link"><span
+                                                    class="icon flaticon-magnifying-glass-1"></span></a>
+                                            <a href="" class="link"><span
+                                                    class="icon flaticon-unlink"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item small-block masonry-item all hospital commercial">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{% static 'images/gallery/2.jpg' %}" alt="">
+                                <!--Overlay Box-->
+                                <div class="overlay-box">
+                                    <div class="overlay-inner">
+                                        <div class="content">
+                                            <h3><a href="{% url 'service:about' %}">Modular Kitchen</a></h3>
+                                            <a href="{% static 'images/gallery/2.jpg' %}" data-fancybox="gallery-1"
+                                               data-caption="" class="link"><span
+                                                    class="icon flaticon-magnifying-glass-1"></span></a>
+                                            <a href="{% url 'service:about' %}" class="link"><span
+                                                    class="icon flaticon-unlink"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item small-block masonry-item all residential office commercial">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{% static 'images/gallery/3.jpg' %}" alt="">
+                                <!--Overlay Box-->
+                                <div class="overlay-box">
+                                    <div class="overlay-inner">
+                                        <div class="content">
+                                            <h3><a href="{% url 'service:about' %}">Modular Kitchen</a></h3>
+                                            <a href="{% static 'images/gallery/3.jpg' %}" data-fancybox="gallery-1"
+                                               data-caption="" class="link"><span
+                                                    class="icon flaticon-magnifying-glass-1"></span></a>
+                                            <a href="{% url 'service:about' %}" class="link"><span
+                                                    class="icon flaticon-unlink"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item small-block masonry-item all commercial">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{% static 'images/gallery/4.jpg' %}" alt="">
+                                <!--Overlay Box-->
+                                <div class="overlay-box">
+                                    <div class="overlay-inner">
+                                        <div class="content">
+                                            <h3><a href="{% url 'service:about' %}">Modular Kitchen</a></h3>
+                                            <a href="{% static 'images/gallery/4.jpg' %}" data-fancybox="gallery-1"
+                                               data-caption="" class="link"><span
+                                                    class="icon flaticon-magnifying-glass-1"></span></a>
+                                            <a href="{% url 'service:about' %}" class="link"><span
+                                                    class="icon flaticon-unlink"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item large-block masonry-item all hospital office residential">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{% static 'images/gallery/7.jpg' %}" alt="">
+                                <!--Overlay Box-->
+                                <div class="overlay-box">
+                                    <div class="overlay-inner">
+                                        <div class="content">
+                                            <h3><a href="{% url 'service:about' %}">Modular Kitchen</a></h3>
+                                            <a href="{% static 'images/gallery/7.jpg' %}" data-fancybox="gallery-1"
+                                               data-caption="" class="link"><span
+                                                    class="icon flaticon-magnifying-glass-1"></span></a>
+                                            <a href="{% url 'service:about' %}" class="link"><span
+                                                    class="icon flaticon-unlink"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    {##}
+                    <!-- Gallery Item -->
+                    <div class="gallery-item small-block masonry-item all residential">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{% static 'images/gallery/5.jpg' %}" alt="">
+                                <!--Overlay Box-->
+                                <div class="overlay-box">
+                                    <div class="overlay-inner">
+                                        <div class="content">
+                                            <h3><a href="{% url 'service:about' %}">Modular Kitchen</a></h3>
+                                            <a href="{% static 'images/gallery/5.jpg' %}" data-fancybox="gallery-1"
+                                               data-caption="" class="link"><span
+                                                    class="icon flaticon-magnifying-glass-1"></span></a>
+                                            <a href="{% url 'service:about' %}" class="link"><span
+                                                    class="icon flaticon-unlink"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item small-block masonry-item all hospital office">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="{% static 'images/gallery/6.jpg' %}" alt="">
+                                <!--Overlay Box-->
+                                <div class="overlay-box">
+                                    <div class="overlay-inner">
+                                        <div class="content">
+                                            <h3><a href="{% url 'service:about' %}">Modular Kitchen</a></h3>
+                                            <a href="{% static 'images/gallery/6.jpg' %}" data-fancybox="gallery-1"
+                                               data-caption="" class="link"><span
+                                                    class="icon flaticon-magnifying-glass-1"></span></a>
+                                            <a href="{% url 'service:about' %}" class="link"><span
+                                                    class="icon flaticon-unlink"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                </div>
+
+                </div>
+
+                <!-- More Projects -->
+                <div class="more-projects">
+                    <a href="" class="projects">View All Projects</a>
+                </div>
+                </div>
+        </section>
+    </div>
+
+
+    <!-- End Project Section -->
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title-two centered">
+                <h2>What our customers says</h2>
+                <div class="title-text">Thousands of people done interior</div>
+            </div>
+
+            <div class="testimonial-carousel owl-carousel owl-theme">
+                <!-- Testimonial Block -->
+                {% for team in teams %}
+                    <div class="testimonial-block">
+                        <div class="inner-box">
+                            <div class="content">
+                                <div class="image-outer">
+                                    <div class="image">
+                                        <img src="{{ team.image1.url }}" alt=""/>
+                                    </div>
+                                </div>
+                                <h3>{{ team.name }}</h3>
+                                <div class="title">{{ team.job }}</div>
+                                <div class="text">{{ team.short_description|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonial Section -->
+
+    <!-- Featured Section -->
+    <section class="featured-section" style="background-image: url({% static 'images/background/2.jpg' %})">
+        <div class="auto-container">
+            <!-- Title Box -->
+            <div class="title-box">
+                <h2>Our Work Process</h2>
+            </div>
+
+            <div class="row clearfix">
+
+                <!-- Feature Block -->
+                <div class="feature-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="icon-outer">
+                            <div class="icon-box">
+                                <span class="icon flaticon-hand-shake"></span>
+                            </div>
+                            <div class="feature-number">1</div>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="{% url 'service:about' %}">Meet Customers</a></h3>
+                            <div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem
+                                sequi nesciunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Block -->
+                <div class="feature-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms">
+                        <div class="icon-outer">
+                            <div class="icon-box">
+                                <span class="icon flaticon-answer"></span>
+                            </div>
+                            <div class="feature-number">2</div>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="{% url 'service:about' %}">Design Discussion</a></h3>
+                            <div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem
+                                sequi nesciunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Block -->
+                <div class="feature-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="1500ms">
+                        <div class="icon-outer">
+                            <div class="icon-box">
+                                <span class="icon flaticon-sketch"></span>
+                            </div>
+                            <div class="feature-number">3</div>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="{% url 'service:about' %}">Drafting Design</a></h3>
+                            <div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem
+                                sequi nesciunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Block -->
+                <div class="feature-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInLeft" data-wow-delay="750ms" data-wow-duration="1500ms">
+                        <div class="icon-outer">
+                            <div class="icon-box">
+                                <span class="icon flaticon-house-1"></span>
+                            </div>
+                            <div class="feature-number">4</div>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="{% url 'service:about' %}">Implimentation</a></h3>
+                            <div class="text">Osed quia consequuntur magni dolores eos qui rati one volu ptatem
+                                sequi nesciunt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+{#    <section class="news-section">#}
+{#        <div class="auto-container">#}
+{#            <!-- Sec Title -->#}
+{#            <div class="sec-title">#}
+{#                <h2>Need a design fix? Read our magazine</h2>#}
+{#                <div class="text">Stay updated with latest trends, inspiration, expert tips, DIYs and more</div>#}
+{#            </div>#}
+{##}
+{#            <div class="row clearfix">#}
+{##}
+{#                {% for post in posts %}#}
+{#                    <div class="news-block col-lg-4 col-md-6 col-sm-12">#}
+{#                        <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">#}
+{#                            <div class="image">#}
+{#                                <a href="{% url 'service:detail' %}"><img src="{{ post.image.url }}" alt=""/></a>#}
+{#                            </div>#}
+{#                            <div class="lower-content">#}
+{#                                <ul class="post-meta">#}
+{#                                    <li>By <span>Michale</span></li>#}
+{#                                    <li>{{ post.title }}</li>#}
+{#                                </ul>#}
+{#                                <h3><a href="{% url 'service:detail' pk=blog.pk %}">{{ post.content }}</a></h3>#}
+{#                                <a href="{% url 'service:detail' pk=blog.pk %}" class="read-more">Read more <span#}
+{#                                        class="icon flaticon-right-arrow-1"></span></a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#        </div>#}
+{#    </section>#}
+{##}
+{##}
+
+{% endblock %}
+
