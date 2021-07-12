@@ -1,5 +1,2 @@
 venv
 assets
-db.sqlite3
-manage.py
-requirements.txt
