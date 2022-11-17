@@ -95,7 +95,7 @@
                                 {% url 'service:contact' as contact %}
                                 <li class="{% if request.path == contact %}current dropdown{% endif %}">
                                     <a href="{{ contact }}">Contact</a></li>
-                                {% ugit initrl 'order:create' as checout %}
+                                {% url 'order:create' as checout %}
                                 <li git initclass="{% if request.path == checout %}current dropdown{% endif %}">
                                     <a href="{{ checout }}">Checout</a></li>
                                 {% url 'products:card' as card %}
